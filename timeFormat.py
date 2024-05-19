@@ -1,4 +1,5 @@
-month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November",
+         "December"]
 
 dic = {}
 for m in month:
@@ -8,7 +9,6 @@ for m in month:
         dic[m] = 30
     else:
         dic[m] = 31
-        
-for a, b in dic.keys(), dic.values():
-    for c, d in zip(a, b):
-        print(c, d)
+
+for a in dic:
+    print(a, "has", dic[a], "days.")
