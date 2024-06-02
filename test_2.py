@@ -51,11 +51,11 @@ vb.save('May_AQI.xlsx')  # 將工作簿存檔
 # Fake
 
 # 將獲取的數據轉換為 pandas DataFrame
-df = pd.DataFrame(data_json['records'])
+# df = pd.DataFrame(data_json['records'])
 #
 # # 將 'monitordate' 列轉換為 datetime 對象，並設置為索引
-df['monitordate'] = pd.to_datetime(df['monitordate'])
-df = df.set_index('monitordate')
+# df['monitordate'] = pd.to_datetime(df['monitordate'])
+# df = df.set_index('monitordate')
 #
 # # 將欄位轉換為數字
 # for col in ['aqi', 'so2subindex', 'cosubindex', 'o3subindex', 'pm10subindex', 'no2subindex', 'o38subindex', 'pm25subindex']:
@@ -64,11 +64,11 @@ df = df.set_index('monitordate')
 # # 現在計算平均值
 # df_daily = df.resample('D').mean()
 # # 繪製折線圖
-df[['aqi', 'so2subindex', 'cosubindex', 'o3subindex', 'pm10subindex', 'no2subindex', 'o38subindex', 'pm25subindex']].plot(kind='line')
-plt.title('不同指標隨時間變化的趨勢')
-plt.xlabel('日期')
-plt.ylabel('值')
-plt.show()
+# df[['aqi', 'so2subindex', 'cosubindex', 'o3subindex', 'pm10subindex', 'no2subindex', 'o38subindex', 'pm25subindex']].plot(kind='line')
+# plt.title('不同指標隨時間變化的趨勢')
+# plt.xlabel('日期')
+# plt.ylabel('值')
+# plt.show()
 #
 # # 繪製長條圖
 # df_daily[['aqi', 'so2subindex', 'cosubindex', 'o3subindex', 'pm10subindex', 'no2subindex', 'o38subindex', 'pm25subindex']].mean().plot(kind='bar')

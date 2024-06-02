@@ -24,7 +24,7 @@ now = datetime.now().strftime("%Y-%m-%d")
 print(type(now))
 day = [str(i).zfill(2) for i in range(1, 32)]
 for z in day:
-    date = f"2024-05-{z}"
+    date = f"2024-06-{z}"
     # print(date)
     new_sheet = wsec1.create_sheet(date)  # 在 Workbook 物件上創建新的工作表
     new_sheet.append(data_json_list_chinese)  # 寫入標題
@@ -37,4 +37,8 @@ for z in day:
             elif a[2] == date:
                 new_sheet.append(a)  # 寫入標題
 wsec1.remove(wsec1['Sheet'])  # 刪除預設工作表
-wsec1.save('New_May_AQI.xlsx')  # 儲存到新的檔案
+# Ensure the file is not open in another program and the script has necessary permissions
+try:
+    wsec1.save('New_May_AQI.xlsx')  # 儲存到新的檔案
+except PermissionError:
+    print("Permission denied: Unable to write to the file 'New_May_AQI.xlsx'. Please ensure the file is not open in another program and the script has necessary permissions.")
